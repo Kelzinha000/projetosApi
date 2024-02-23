@@ -3,16 +3,16 @@
 // "episodes": "https://rickandmortyapi.com/api/episode"
 
 const page = 2
-const baseUrl = '"https://rickandmortyapi.com/api'
+const baseUrl = 'https://rickandmortyapi.com/api'
 
 const loadCharacter = async () => {
-    const res = await fetch(`${baseUrl}/character?page=${page}&_limit=5`)
-     const data = await res.json();
-     const limitData =  data.results.slice(0,6)
+    const res = await fetch(`${baseUrl}/character?page=${page}`)
+    const data = await res.json();
+    const limitData =  data.results.slice(0,6)
     return {results: limitData}
 } ; // async tranformr essa função que nessecita de resposta
  const loadLocation = async () => {
-    const res = await fetch ( `${baseUrl}/location`)
+    const res = await fetch( `${baseUrl}/location`)
     return await res.json()
 };
  
